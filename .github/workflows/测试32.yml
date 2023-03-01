@@ -148,15 +148,15 @@ jobs:
       with:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
-          keep_minimum_runs: 0
-          retain_days: 7
+          keep_minimum_runs: 6
+          retain_days: 30
           #retain_days: ${{ github.event.inputs.action_days }}
     
     - name: 删除多余releases
       uses: dev-drprasad/delete-older-releases@master
       with:
         repo: ${{ github.repository }}
-        keep_latest: 5
+        keep_latest: 15
         #keep_latest: ${{ github.event.inputs.rele }}
         delete_tags: true
       env:
