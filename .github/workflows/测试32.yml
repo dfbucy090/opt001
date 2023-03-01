@@ -30,7 +30,7 @@ env:
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
-  UPLOAD_RELEASE: false
+  UPLOAD_RELEASE: true
   TZ: Asia/Shanghai
 
 jobs:
@@ -137,7 +137,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: openwrt_32_${{ env.FILE_DATE }}
-        artifacts: ${{ env.FIRMWARE }}/*.combined.img.gz
+        artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
