@@ -137,7 +137,7 @@ jobs:
       uses: ncipollo/release-action@v1
       with:
         tag: openwrt_64_${{ env.FILE_DATE }}
-        artifacts: /home/runner/work/*/*/openwrt/bin/targets/x86/*/*.combined.img.gz
+        artifacts: ${{ env.FIRMWARE }}/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
         body: |
