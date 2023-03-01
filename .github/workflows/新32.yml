@@ -9,7 +9,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: 测试32
+name: 新32
 
 on:
   repository_dispatch:
