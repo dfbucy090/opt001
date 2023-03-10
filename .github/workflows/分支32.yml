@@ -21,12 +21,12 @@ on:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: master
+  REPO_BRANCH: 20220505
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: x86-32.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  UPLOAD_BIN_DIR: true
+  UPLOAD_BIN_DIR: flase
   UPLOAD_FIRMWARE: true
   UPLOAD_COWTRANSFER: false
   UPLOAD_WETRANSFER: false
@@ -127,8 +127,8 @@ jobs:
         echo "status=success" >> $GITHUB_ENV
     - name: Upload firmware directory
       uses: actions/upload-artifact@main     
-      #if: steps.organize.outputs.status == 'success' && !cancelled()
-      if: (!cancelled())
+      if: steps.organize.outputs.status == 'success' && !cancelled()
+      #if: (!cancelled())
       with:
         name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
