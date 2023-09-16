@@ -136,7 +136,7 @@ jobs:
     - name: 发布固件
       uses: ncipollo/release-action@v1
       with:
-        tag: openwrt_64_${{ env.FILE_DATE }}
+        tag: openwrt_64Docker_${{ env.FILE_DATE }}
         artifacts: ${{ env.FIRMWARE }}/*.img.gz
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
@@ -157,7 +157,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@master
       with:
         repo: ${{ github.repository }}
-        keep_latest: 15
+        keep_latest: 20
         #keep_latest: ${{ github.event.inputs.rele }}
         delete_tags: true
       env:
