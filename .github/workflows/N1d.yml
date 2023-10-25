@@ -23,7 +23,7 @@ env:
   REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: N1docker.config
+  CONFIG_FILE: N1d.config
   DIY_P1_SH: diy01.sh
   DIY_P2_SH: diy02.sh
   UPLOAD_BIN_DIR: false
@@ -177,7 +177,7 @@ jobs:
     - name: 发布固件
       uses: ncipollo/release-action@v1
       with:
-        tag: openwrt_N1d_${{ env.PACKAGED_OUTPUTDATE }}
+        tag: N1d_${{ env.PACKAGED_OUTPUTDATE }}
         artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
         allowUpdates: true
         token: ${{ secrets.GITHUB_TOKEN }}
