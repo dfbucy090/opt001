@@ -39,7 +39,7 @@ jobs:
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Initialization environment
       env:
@@ -198,7 +198,7 @@ jobs:
       uses: dev-drprasad/delete-older-releases@master
       with:
         repo: ${{ github.repository }}
-        keep_latest: 20
+        keep_latest: 40
         #keep_latest: ${{ github.event.inputs.rele }}
         delete_tags: true
       env:
